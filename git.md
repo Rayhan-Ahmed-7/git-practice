@@ -11,3 +11,5 @@ git add QnA.txt
 git add --all
 git add .
 now a commit will create a new version
+git restore friend-list.txt
+git restore .
