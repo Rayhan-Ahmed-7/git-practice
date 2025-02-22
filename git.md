@@ -21,4 +21,6 @@ git branch table-version
 git branch
 git checkout table-version
 git checkout -b table-version-new
-
+git branch -D table-version-new
+git merge table-version
+git diff cc3b2eb e0ac7bd to see difference between commits the difference will be shown from second commit side wise
