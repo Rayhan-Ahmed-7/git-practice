@@ -17,5 +17,8 @@ git restore .
 git log to see commit history to exit press q or to see more press up down
 git log --oneline to see more compact
 git checkout e0ac7bd commits are basically branch which is a unique name 
-git branch table-branch
+git branch table-version
 git branch
+git checkout table-version
+git checkout -b table-version-new
+
