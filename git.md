@@ -10,6 +10,12 @@ to track untracked files
 git add QnA.txt
 git add --all
 git add .
+git commit -m ":zap: contact numbers added"
 now a commit will create a new version
 git restore friend-list.txt
 git restore .
+git log to see commit history to exit press q or to see more press up down
+git log --oneline to see more compact
+git checkout e0ac7bd commits are basically branch which is a unique name 
+git branch table-branch
+git branch
