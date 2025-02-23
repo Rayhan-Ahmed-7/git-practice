@@ -31,3 +31,13 @@ ssh-add ~/.ssh/id_rsa to add the private key in ssh agent
 cat ~/.ssh/id_rsa.pub | clip copy the public key
 then goto github settings then go to SSH and GPG keys then click the New SSH key and add the copied ssh key then on first push it will ask for confirmation type yes to continue
 git pull origin main
+git checkout -b location-version
+fork is basically clone instead of cloning locally it clones the project on you github
+one ssh key can be only used to one account now if you wan't connect to another github account you have to create brand new ssh key pairs
+for example 
+ssh-keygen -t ed25519 -C "your_email@example.com"
+When prompted, save it with a new name, e.g., id_github_personal
+then do these
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_github_personal
+then add the pub key to your github account
