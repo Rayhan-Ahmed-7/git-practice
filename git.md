@@ -41,3 +41,4 @@ then do these
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_github_personal
 then add the pub key to your github account
+do fork add something make pull request 
