@@ -23,4 +23,10 @@ git checkout table-version
 git checkout -b table-version-new
 git branch -D table-version-new
 git merge table-version
-git diff cc3b2eb e0ac7bd to see difference between commits the difference will be shown from second commit side wise
+git diff cc3b2eb e0ac7bd to see difference between commits the difference will be shown from second commit side wise. wanted to see the difference between the left commit with right commit the difference will be show from the right commit side since it's the last parameter any addition or deletion will be shown from it's perspective
+ls -al ~/.ssh too see ssh
+ssh-keygen -t rsa -b 4096 -C "dev.rayhan7@gmail.com"
+eval "$(ssh-agent -s)” to run the ssh agent in background
+ssh-add ~/.ssh/id_rsa to add the private key in ssh agent
+cat ~/.ssh/id_rsa.pub | clip copy the public key
+then goto github settings then go to SSH and GPG keys then click the New SSH key and add the copied ssh key then on first push it will ask for confirmation type yes to continue
