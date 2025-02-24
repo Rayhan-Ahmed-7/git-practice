@@ -54,3 +54,38 @@ git stash apply
 git stash apply stash@{1}
 git stash drop stash@{1}
 git stash clear
+
+git reset --soft HEAD~1
+👉 Moves HEAD to <commit> but keeps changes staged.
+
+Useful when you want to undo commits but keep staged changes.
+The changes remain in the index, so you can recommit them.
+git reset --mixed HEAD~1
+👉 Moves HEAD to <commit> and unstages changes but keeps them in the working directory.
+
+Useful when you want to undo commits and unstage changes without deleting them.
+The unstaged changes are still available in the working directory.
+git reset --hard HEAD~1
+👉 Moves HEAD to <commit> and discards all changes (both staged and unstaged).
+
+This is a destructive operation and cannot be undone easily.
+Useful when you want to completely discard changes.
+
+git reset HEAD git.md
+Used to unstage a specific file without discarding changes.
+
+git reset --hard ORIG_HEAD
+### **When Will `ORIG_HEAD` Not Work?**
+❌ **If another operation updates ORIG_HEAD** (e.g., another reset, merge, or rebase), then `ORIG_HEAD` will change, and you might not be able to undo your reset.
+
+✅ **Safer Alternative?**
+Use:
+```sh
+git reflog
+```
+This shows a history of HEAD movements, and you can manually reset to a previous commit:
+```sh
+git reset --hard <commit-id-from-reflog>
+```
+git reset <commit-id> changes after that commit will become uncommitted
+git reset --hard <commit-id> if you don't want the changes after that commit use --hard
