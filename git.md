@@ -46,11 +46,11 @@ then add the pub key to your github account
 do fork add something make pull request wait for owner to merge
 
 git stash
-git stash pop
-git stash apply
-git stash list
-git stash pop stash@{1}
-git stash apply stash@{1}
-git stash clear
-git stash drop stash@{1}
 git stash -u
+git stash list
+git stash pop
+git stash pop stash@{1}
+git stash apply
+git stash apply stash@{1}
+git stash drop stash@{1}
+git stash clear
