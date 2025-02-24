@@ -92,3 +92,7 @@ git reset --hard <commit-id-from-reflog>
 ```
 git reset <commit-id> changes after that commit will become uncommitted
 git reset --hard <commit-id> if you don't want the changes after that commit use --hard
+
+note if you have already pushed a commit on remote repository resetting that commit is not recommended on such case git revert is more useful
+get revert <commit-id>
+git revert is used to undo a commit by creating a new commit that reverses the changes made by a previous commit. Unlike git reset, which moves HEAD and can remove commits, git revert preserves history by adding a new commit.
