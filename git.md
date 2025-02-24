@@ -13,7 +13,9 @@ git add .
 git commit -m ":zap: contact numbers added"
 now a commit will create a new version
 git restore friend-list.txt
-git restore .
+git restore <directory>
+git restore . for local unstaged & uncommitted change to undo local unstaged & uncommitted change
+git restore --staged . to undo local staged change
 git log to see commit history to exit press q or to see more press up down
 git log --oneline to see more compact
 git checkout e0ac7bd commits are basically branch which is a unique name 
@@ -41,4 +43,4 @@ then do these
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_github_personal
 then add the pub key to your github account
-do fork add something make pull request 
+do fork add something make pull request wait for owner to merge
