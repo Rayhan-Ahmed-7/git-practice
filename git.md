@@ -96,3 +96,5 @@ git reset --hard <commit-id> if you don't want the changes after that commit use
 note if you have already pushed a commit on remote repository resetting that commit is not recommended on such case git revert is more useful
 get revert <commit-id>
 git revert is used to undo a commit or remove the code of a commit by creating a new commit that reverses the changes made by a previous commit. Unlike git reset, which moves HEAD and can remove commits, git revert preserves history by adding a new commit.
+
+checking if revert undoes the commit
