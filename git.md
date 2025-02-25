@@ -96,3 +96,6 @@ git revert is used to undo a commit or remove the code of a commit by creating a
 
 git rebase main rebase is used to maintain a cleaner git history if you want the latest changes in your branch from main do this this won't effect your git log history
 * first git will check what's the last commit that match with my branch with main then it will put aside our branch commit's and start to add all the new commit of the main branch then it will apply the out branch commits on top of it serially
+
+git merge new-feature --squash 
+when to use squash ? lets say we need to add simple feature to out main project we have created a branch new feature and we made some changes add a lot of commit's during development now development is done. and we want to merge out branch to main but we want to maintain a cleaner git log history we don't want these lot of commits to get added on out main branch to do that we can add --squash flag while merging by doing that all the changes of new feature branch will come to main in staged state now you can make a single commit for all that change.
