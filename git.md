@@ -47,12 +47,9 @@ do fork add something make pull request wait for owner to merge
 
 git stash
 git stash -u
-git stash -u
 git stash list
 git stash pop
-git stash pop
 git stash pop stash@{1}
-git stash apply
 git stash apply
 git stash apply stash@{1}
 git stash drop stash@{1}
