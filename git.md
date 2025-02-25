@@ -93,3 +93,5 @@ git reset --hard <commit-id> if you don't want the changes after that commit use
 note if you have already pushed a commit on remote repository resetting that commit is not recommended on such case git revert is more useful
 get revert <commit-id>
 git revert is used to undo a commit or remove the code of a commit by creating a new commit that reverses the changes made by a previous commit. Unlike git reset, which moves HEAD and can remove commits, git revert preserves history by adding a new commit.
+
+git rebase main rebase is used to maintain a cleaner git history if you want the latest changes in your branch from main do this this won't effect your git log history
