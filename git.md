@@ -103,3 +103,8 @@ when to use squash ? lets say we need to add simple feature to out main project 
 git reset -p 54b60ba allows you to unstage parts of that commit interactively.
 It does NOT delete commits or modify history.
 The unstaged changes remain in the working directory unless discarded.
+
+Scenario	Use This
+You committed something but want to unstage some parts	git reset -p
+You want to reuse changes from an old commit but not create a new commit yet	git cherry-pick -n
+You want to apply changes from an old commit and create a new commit automatically	git cherry-pick <commit>
