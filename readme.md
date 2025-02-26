@@ -1,5 +1,3 @@
-Here’s a detailed and corrected version of your `README.md`, with all the provided commands, explanations, and additional clarifications included, along with some emojis for visual appeal:
-
 # Git Commands Cheat Sheet 📜
 
 ## Configuration ⚙️
