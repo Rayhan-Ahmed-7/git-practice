@@ -99,3 +99,7 @@ git rebase main rebase is used to maintain a cleaner git history if you want the
 
 git merge new-feature --squash 
 when to use squash ? lets say we need to add simple feature to out main project we have created a branch new feature and we made some changes add a lot of commit's during development now development is done. and we want to merge out branch to main but we want to maintain a cleaner git log history we don't want these lot of commits to get added on out main branch to do that we can add --squash flag while merging by doing that all the changes of new feature branch will come to main in staged state now you can make a single commit for all that change.
+
+git reset -p 54b60ba allows you to unstage parts of that commit interactively.
+It does NOT delete commits or modify history.
+The unstaged changes remain in the working directory unless discarded.
