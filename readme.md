@@ -288,3 +288,34 @@ git reset -p <commit-id>
 | You committed something but want to unstage some parts            | `git reset -p`               | Interactively unstage specific changes from the most recent commit.                            |
 | You want to reuse changes from an old commit but not create a new commit yet | `git cherry-pick -n <commit>` | Applies changes from the specified commit to your working directory without committing them.     |
 | You want to apply changes from an old commit and create a new commit automatically | `git cherry-pick <commit>`    | Applies changes from the specified commit and creates a new commit in your current branch.       |
+
+If you want to modify **your branch** (not `dev`), but bring in only `routingList.js` from `dev`, you should:  
+
+### **Steps to Bring Only `routingList.js` from `dev` to Your Branch**
+1. **Switch to your branch** (if you're not already on it):  
+   ```bash
+   git checkout my-branch
+   ```
+
+2. **Checkout `routingList.js` from `dev` into your branch**:  
+   ```bash
+   git checkout dev -- src/router/routingList.js
+   ```
+   - This replaces `routingList.js` in **your branch** with the version from `dev`.  
+   - Other files remain unchanged.
+
+3. **Add and commit the file**:  
+   ```bash
+   git add src/router/routingList.js
+   git commit -m "Updated routingList.js with changes from dev"
+   ```
+
+4. **Continue your merge or push as needed**.
+
+---
+
+### **What This Achieves**
+- Your branch **remains the same**, except for `routingList.js`, which is now the version from `dev`.
+- You avoid merging **all** of `dev` into your branch—only `routingList.js` is affected.
+
+Would you like a safer approach, such as checking the diff before applying the changes? 🚀
