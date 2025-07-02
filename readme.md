@@ -253,11 +253,96 @@ git reset --hard <commit-id>
 
 ## Reverting Changes 🔄
 
-### Revert a Commit
+`git revert` is a **safe and controlled way to undo changes** in Git **without rewriting history**. It creates a new commit that **reverses** the effect of a previous commit.
+
+---
+
+### ✅ **Purpose of `git revert`**
+
+To undo the effects of a previous commit by creating a **new commit** that does the opposite — without deleting or altering the actual history.
+
+This is especially useful in **shared/public repositories**, where rewriting commit history with tools like `git reset` can be dangerous.
+
+---
+
+### 🔄 How it Works
+
+#### 1. You run:
+
 ```bash
-git revert <commit-id>
+git revert <commit-hash>
 ```
-- **Description:** Undoes a commit or removes the code of a commit by creating a new commit that reverses the changes made by a previous commit. This preserves history by adding a new commit instead of removing previous ones.
+
+#### 2. Git:
+
+* Analyzes what changes that commit made.
+* Generates a **new commit** that **reverses** those changes.
+* This new commit is added on top of the history.
+
+---
+
+### 📌 Example
+
+#### Original commit history:
+
+```
+A -- B -- C -- D
+```
+
+Let’s say you want to undo commit `C`.
+
+You run:
+
+```bash
+git revert C
+```
+
+Now the history becomes:
+
+```
+A -- B -- C -- D -- E
+```
+
+Where `E` is a new commit that **reverses** what `C` did.
+
+---
+
+### ✅ When to Use `git revert`
+
+* When you want to **undo a bad commit** but keep your history intact.
+* When you’re working with a **team or shared repository**.
+* When you need to **preserve a linear, understandable history**.
+
+---
+
+### ⚠️ Difference from `git reset`
+
+| Feature             | `git revert`                  | `git reset`                                      |
+| ------------------- | ----------------------------- | ------------------------------------------------ |
+| Modifies history?   | ❌ No                          | ✅ Yes (can delete commits)                       |
+| Safe for sharing?   | ✅ Yes                         | ❌ Dangerous in shared repos                      |
+| Creates new commit? | ✅ Yes (with opposite changes) | ❌ No (just moves branch pointer or staging area) |
+| Use case            | Undo specific commit (safely) | Rewind local history (private or local only)     |
+
+---
+
+### 🧠 Tip
+
+You can revert multiple commits like:
+
+```bash
+git revert <oldest-commit>^..<newest-commit>
+```
+
+Or for interactive multi-revert:
+
+```bash
+git log --oneline   # Get the commit hashes
+git revert -n <commit1> <commit2>  # Stage reverts without committing
+git commit -m "Revert multiple commits"
+```
+
+---
 
 ## Rebasing and Squashing 🧹
 
